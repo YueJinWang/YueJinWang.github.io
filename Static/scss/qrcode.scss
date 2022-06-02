@@ -1,0 +1,150 @@
+@import 'mixin';
+
+.container {
+    padding: 0;
+
+}
+
+#reader {
+    width: 100%;
+}
+
+
+.wrap__img {
+    width: 24px;
+    height: 24px;
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+
+.order {
+    background: #fff;
+    display: flex;
+
+    .order__left {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        justify-content: center;
+
+        &.scan {
+            align-items: flex-start;
+        }
+    }
+
+    .order__right {
+        max-width: 92px;
+        min-width: 92px;
+    }
+}
+
+.order__top {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $color-ec;
+    padding-bottom: 10px;
+    width: 100%;
+
+    .order__top--left {
+        flex-grow: 1;
+
+        .order__farmer {
+            width: calc(100% + 24px);
+        }
+    }
+
+    .order__top--right {
+        display: flex;
+
+        .order__edit {
+            margin-right: 12px;
+        }
+
+    }
+}
+
+.order__bottom {
+    display: flex;
+    min-height: 68px;
+    max-height: 68px;
+    width: 100%;
+
+    .order__bottom--left {
+        width: 66px;
+        border-right: 1px solid $color-ec;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 12px;
+    }
+
+    .order__bottom--right {
+        flex-grow: 1;
+
+        span.font_primary {
+            font-weight: bold;
+            display: inline-flex;
+            min-width: 80px;
+            margin-right: 8px;
+        }
+
+        .item {
+            display: flex;
+            padding: 9px 0;
+            margin: 0 12px;
+
+            &:first-child {
+                border-bottom: 1px solid $color-ec;
+            }
+        }
+    }
+
+}
+
+.order__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 1px solid $color-ec;
+}
+
+.order__right--top {
+    height: 44px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid $color-ec;
+}
+
+.order__right--bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    text-align: center;
+    min-height: 121px;
+
+    .line {
+        width: 44px;
+        height: 1px;
+        background: #000;
+    }
+}
+
+.chips {
+    position: relative;
+    bottom: 18px;
+    margin-top: -32px;
+    display: flex;
+    justify-content: center;
+    height: 32px;
+}

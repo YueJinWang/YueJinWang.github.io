@@ -1,0 +1,656 @@
+/*  
+        CSS Reset & The basic style of webs     
+---------------------------------------------------
+RULE:
+Element__Modifier--status
+text1_text2 
+
+*/
+@import "mixin";
+
+/* -----------------------------------------------------
+    CSS Reset 
+--------------------------------------------------------*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0;
+    margin-bottom: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+/* remember to define focus styles! */
+:focus,
+button {
+    outline: 0 !important;
+}
+
+body {
+    line-height: 1;
+    color: black;
+    background: white;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+caption,
+th,
+td {
+    text-align: left;
+    font-weight: normal;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+}
+
+blockquote,
+q {
+    quotes: "";
+}
+
+a {
+    text-decoration: none;
+
+    &:any-link {
+        color: #0083CD;
+    }
+}
+
+.v-application a {
+    color: #0083CD;
+}
+
+
+/* -----------------------------------------------------
+    DESIGN GUIDELINE (font & color)
+--------------------------------------------------------*/
+
+/* Font_size */
+.font_title {
+    @include font_title;
+}
+
+.font_subtitle {
+    @include font_subtitle;
+}
+
+.font_heading {
+    @include font_heading;
+}
+
+.font_heading_2 {
+    @include font_heading_2;
+}
+
+.font_bold {
+    @include font_bold;
+}
+
+.font_regular {
+    @include font_regular;
+}
+
+.font_medium {
+    @include font_medium;
+}
+
+.font_caption {
+    @include font_caption;
+}
+
+.font_small {
+    @include font_small;
+}
+
+.font_mini {
+    @include font_mini;
+}
+
+
+
+/* Font_color */
+.font_primary {
+    color: $color-primary !important;
+}
+
+.font_second {
+    color: $color-second !important;
+}
+
+.font_black {
+    color: #000000 !important;
+}
+
+.font_white {
+    color: #FFFFFF !important;
+}
+
+.font_red {
+    color: $color-red !important;
+}
+
+
+
+/* -----------------------------------------------------
+    Vuetify adjustment
+--------------------------------------------------------*/
+p,
+span {
+    margin-bottom: 0 !important;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.form-control:focus,
+.form-select:focus {
+    box-shadow: none;
+    border-color: $color-c4;
+}
+
+.container {
+    min-width: 100%;
+    padding: 52px;
+    margin: auto 0;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1088px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        padding: 24px 12px;
+    }
+}
+
+
+
+/* -----------------------------------------------------
+    COMPONENTS
+--------------------------------------------------------*/
+
+/* RWD */
+.web_only {
+    display: inherit;
+}
+
+.app_only {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .web_only {
+        display: none;
+    }
+
+    .app_only {
+        display: inherit;
+    }
+
+}
+
+
+/* PAGE_TITLE */
+/* .................................
+<div class="page_title">
+    <img src="../static/icon/mypage.png">
+    <h1 class="font_title">新規登録</h1>
+</div>
+<div class="page_hr"></div>
+................................. */
+
+.page_title {
+    display: flex;
+    align-items: center;
+    padding-bottom: 6px;
+}
+
+.page_title img {
+    height: 24px;
+    margin-right: 8px;
+}
+
+.page_title h1 {
+    color: $color-primary;
+}
+
+.page_hr {
+    border-bottom: 1px solid $color-second;
+    margin-bottom: 36px;
+}
+
+@media screen and (max-width: 767px) {
+    .page_title {
+        padding-bottom: 5px;
+    }
+
+    .page_hr {
+        margin-bottom: 16px;
+    }
+}
+
+
+
+
+/* BUTTON */
+
+/* .................................
+<button class="btn_primary" v-ripple>ENTER</button>
+<button class="btn_white" v-ripple>BACK</button>
+<button class="btn_gray">DISABLE</button>
+................................. */
+
+.btn_primary,
+.btn_white,
+.btn_gray {
+    width: 284px;
+    height: 60px;
+    border-radius: 35px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.btn_primary {
+    background: $color-primary;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.btn_white {
+    border: 1px solid $color-primary;
+    color: $color-primary;
+    cursor: pointer;
+}
+
+.btn_gray {
+    color: #FFFFFF;
+    background: $color-c4;
+    cursor: default;
+    pointer-events: none;
+}
+
+.btns {
+    display: flex;
+    flex-direction: column;
+
+    a {
+        width: fit-content;
+        margin: auto;
+    }
+}
+
+.href_btn {
+    display: flex;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.btn_tab {
+    @include font_regular;
+    width: 104px;
+    height: 38px;
+    border: 1px solid $color-primary;
+    color: $color-primary;
+
+    border-radius: 38px;
+    cursor: pointer;
+
+    a {
+        color: $color-primary !important;
+    }
+
+    &.active {
+        background: $color-primary;
+        color: #FFFFFF;
+
+        a {
+            color: #FFFFFF !important;
+        }
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+
+    .btn_primary,
+    .btn_white,
+    .btn_gray {
+        width: 220px;
+        height: 52px;
+    }
+
+}
+
+button[disabled] {
+    @include btn_gray;
+}
+
+
+/* ERROR_HINT */
+
+/* .................................
+ <div class="error_hint">入力されていません。</div>
+................................. */
+.error_hint {
+    display: none;
+
+    &.active {
+        display: flex !important;
+        align-items: center;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 4px;
+
+        &::before {
+            content: "エラー";
+            width: 52px;
+            height: 23px;
+            background: #777777;
+            color: #FFFFFF;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 8px;
+        }
+    }
+}
+
+input.error_input,
+select.error_input {
+    background-color: #FAEDED !important;
+    border: 1px solid #FF0000 !important;
+}
+
+
+// ----error-----
+#form label.error {
+    background-color: transparent !important;
+    width: 100%;
+}
+
+
+.v-application {
+    .error {
+        align-items: center;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
+        color: #000000;
+
+        &::before {
+            content: "エラー";
+            width: 52px;
+            height: 23px;
+            background: #777777;
+            color: #FFFFFF;
+            border-radius: 30px;
+            margin-right: 8px;
+            padding: 3px 5px;
+        }
+    }
+
+    label.error {
+        margin-top: 4px !important;
+    }
+
+    input.error,
+    select.error,
+    textarea.error {
+        @include font_regular;
+        background-color: #FAEDED !important;
+        border: 1px solid #FF0000 !important;
+    }
+
+    select.error {
+        height: 38px;
+    }
+}
+
+
+/* INPUT */
+/* .................................
+.form-check-input
+.form-control
+.form-select
+................................. */
+
+input:focus,
+button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.form-check-input:checked {
+    background-color: #0083CD;
+    border: 1px solid #0083CD;
+    opacity: 1;
+}
+
+
+.form-check-input,
+.form-control,
+.form-select,
+.form-check-input:focus,
+.form-control:focus,
+.form-select:focus,
+.form-check-input[disabled],
+.form-control[disabled],
+.form-select[disabled],
+input[readonly] {
+    border: 1px solid $color-c4;
+    outline: none;
+    box-shadow: none;
+    opacity: 1;
+    margin: auto 5px auto auto;
+}
+
+.form-check-input[disabled] {
+    background: $color-c4;
+}
+
+.form-control[disabled],
+.form-select[disabled],
+input[readonly] {
+    background: $color-ec !important;
+}
+
+
+::placeholder {
+    color: $color-c4 !important;
+}
+
+input[readonly],
+textarea[readonly] {
+    cursor: not-allowed;
+}
+
+/* CHECKBOX */
+/* .................................
+ <div class="checkbox_wrap">
+    <label><input type="checkbox" class="form-check-input">test</label>
+</div>
+................................. */
+.checkbox_wrap {
+    width: fit-content;
+}
+
+.checkbox_wrap * {
+    cursor: pointer;
+}
+
+.checkbox_wrap label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* INPUT ERROR */
+.is_error,
+.is_error:focus {
+    border: 1px solid $color-red;
+    background-color: $color-fa;
+}
+
+
+/* HINT「*」 */
+/* .................................
+<sup class="star">＊</sup>
+................................. */
+.star {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    color: $color-red;
+    width: 20px;
+    top: -4px;
+}
+
+@media screen and (max-width: 767px) {
+    .star {
+        font-size: 12px;
+        margin-left: 4px;
+    }
+}
+
+
+
+/* COMPLETE_PAGE */
+/* .................................
+ <div class="wrapper__complete">
+    <p>TITLE</p>
+    <p>CONTENT</p>
+</div>
+................................. */
+.wrapper__complete {
+    min-height: calc(100vh - 410px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p:first-child {
+        @include font_title;
+        @include font_primary;
+    }
+
+    p:nth-child(2) {
+        @include font_regular;
+        margin-top: 4px;
+        text-align: center;
+    }
+
+    button {
+        margin: 24px auto 0 auto !important;
+    }
+
+
+}
+
+@media screen and (max-width: 767px) {
+
+    .wrapper__complete {
+        min-height: calc(100vh - 332px);
+
+        p:nth-child(2) {
+            margin-top: 16px !important;
+        }
+
+        button {
+            margin: 16px auto 0 auto !important;
+        }
+
+
+    }
+
+}

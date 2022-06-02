@@ -1,0 +1,360 @@
+@charset "UTF-8";
+.wrap {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.title {
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #375946;
+}
+.title h1 {
+  text-align: center;
+}
+
+.cal_title {
+  height: auto;
+  background: transparent !important;
+}
+.cal_title button {
+  height: auto !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cal_title button img {
+  height: 19px;
+  width: 18px;
+}
+.cal_title button .btn__next {
+  transform: rotate(180deg);
+}
+.cal_title .cal_date {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  color: #375946;
+}
+
+.calendar {
+  max-width: 1000px;
+  margin: auto;
+}
+.calendar .v-sheet {
+  margin-bottom: 36px;
+}
+.calendar .v-sheet * {
+  border-color: #C4C4C4 !important;
+}
+
+.v-calendar-weekly__head {
+  height: 31px;
+  border-bottom: 1px solid;
+}
+
+.theme--light.v-calendar-weekly .v-calendar-weekly__head-weekday.v-outside {
+  background: #fff;
+}
+
+.theme--light.v-calendar-weekly .v-calendar-weekly__day.v-outside {
+  background: #ECECEC;
+}
+
+.v-calendar.v-calendar-events .v-calendar-weekly__head-weekday,
+.v-calendar.v-calendar-events .v-calendar-weekly__day {
+  margin-right: 0;
+}
+
+.v-calendar-weekly__head {
+  height: 34px;
+}
+
+.v-calendar-weekly__head-weekday {
+  letter-spacing: 0;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  line-height: 31px;
+}
+@media screen and (max-width: 767px) {
+  .v-calendar-weekly__head-weekday {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.v-calendar-weekly__day {
+  display: flex;
+  flex-direction: column;
+}
+.v-calendar-weekly__day .v-btn__content {
+  letter-spacing: 0;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+}
+@media screen and (max-width: 767px) {
+  .v-calendar-weekly__day .v-btn__content {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+.v-calendar-weekly__day .v-event {
+  border-radius: 0;
+  height: 26px !important;
+  width: calc(100% - 16px) !important;
+  align-items: flex-start !important;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+.v-calendar-weekly__day .v-event > div {
+  padding: 0 !important;
+}
+.v-calendar-weekly__day .v-event:nth-child(2) {
+  border-bottom: 1px solid #E5E5E5;
+  margin-top: auto;
+}
+.v-calendar-weekly__day .v-event:nth-child(2)::before {
+  content: "配荷";
+  letter-spacing: 0;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+}
+@media screen and (max-width: 767px) {
+  .v-calendar-weekly__day .v-event:nth-child(2)::before {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+.v-calendar-weekly__day .v-event:nth-child(3) {
+  margin-top: 0;
+}
+.v-calendar-weekly__day .v-event:nth-child(3)::before {
+  content: "集荷";
+  letter-spacing: 0;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+}
+@media screen and (max-width: 767px) {
+  .v-calendar-weekly__day .v-event:nth-child(3)::before {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.theme--light.v-calendar-weekly .v-calendar-weekly__head-weekday.v-past {
+  color: #000;
+}
+
+.v-calendar-weekly__day-label {
+  text-align: left;
+  margin: 4px 0 0 4px;
+  cursor: default;
+}
+.v-calendar-weekly__day-label button {
+  letter-spacing: 0;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  height: 25px !important;
+  min-width: 25px !important;
+  width: auto !important;
+  border-radius: 31px;
+  padding: 3px;
+  cursor: default !important;
+  color: transparent !important;
+}
+@media screen and (max-width: 767px) {
+  .v-calendar-weekly__day-label button {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+.v-calendar-weekly__day-label .v-btn__content {
+  color: #000;
+}
+.v-calendar-weekly__day-label .theme--light.v-btn:hover:before,
+.v-calendar-weekly__day-label .theme--light.v-btn:focus:before {
+  opacity: 0;
+}
+.v-calendar-weekly__day-label .v-ripple_container {
+  display: none;
+}
+
+.v-calendar-weekly__week {
+  min-height: 124px !important;
+}
+
+.v-calendar .v-event {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.v-calendar .v-event > div {
+  font-size: 12px;
+  letter-spacing: 0;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 18px;
+}
+@media screen and (max-width: 767px) {
+  .v-calendar .v-event > div {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+.v-calendar .v-event .v-ripple__container {
+  display: none;
+}
+
+.v-present .theme--light.v-btn.v-btn--has-bg {
+  background-color: #89BA34;
+}
+.v-present .v-btn__content {
+  color: #fff !important;
+}
+
+@media screen and (max-width: 767px) {
+  .calendar .v-sheet {
+    margin-bottom: 16px;
+  }
+  .calendar .v-sheet * {
+    border-color: #C4C4C4 !important;
+  }
+
+  .cal_title button img {
+    height: 18px;
+    width: 19px;
+  }
+  .cal_title .cal_date {
+    font-size: 16px;
+  }
+
+  .wrap__no_prods {
+    margin-top: 12px;
+  }
+
+  .v-calendar-weekly__head-weekday {
+    line-height: 34px;
+  }
+
+  .v-calendar-weekly__week {
+    min-height: 73px !important;
+  }
+
+  .v-calendar-weekly__day-label {
+    text-align: center;
+    margin: 5px auto 2px auto;
+  }
+
+  .v-calendar-weekly__day {
+    height: 73px !important;
+  }
+  .v-calendar-weekly__day .v-event {
+    flex-direction: row;
+    justify-content: space-between;
+    width: calc(100% - 8px) !important;
+  }
+  .v-calendar-weekly__day .v-event:nth-child(2)::before {
+    content: "配";
+  }
+  .v-calendar-weekly__day .v-event:nth-child(3)::before {
+    content: "集";
+  }
+
+  .theme--light.v-calendar-weekly .v-calendar-weekly__day.v-outside {
+    background: transparent;
+  }
+  .theme--light.v-calendar-weekly .v-calendar-weekly__day.v-outside .v-btn__content {
+    color: #C4C4C4;
+  }
+}
+.font_date {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.wrap__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #C4C4C4;
+  padding-bottom: 12px;
+}
+.wrap__header img {
+  width: 19px;
+  height: 18px;
+}
+.wrap__header .header__pref {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.wrap__header .header__pref .pref__text {
+  padding-left: 8px;
+}
+.wrap__header .header__next {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.wrap__header .header__next .next__text {
+  padding-right: 8px;
+}
+.wrap__header .header__next img {
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 767px) {
+  .font_date {
+    font-size: 16px;
+  }
+
+  .pref__text,
+.next__text {
+    display: none;
+  }
+
+  .wrap__table > p {
+    margin: 12px 0 4px 0 !important;
+  }
+  .wrap__table .prod_table .col_1 {
+    min-width: 88px;
+  }
+  .wrap__table .prod_table .col_2 {
+    width: 100%;
+  }
+  .wrap__table .prod_table .col_3 {
+    min-width: 88px;
+  }
+  .wrap__table .table_title div {
+    height: 56px;
+    padding: 0 12px;
+  }
+  .wrap__table .table_row div {
+    min-height: 88px;
+    padding: 0 12px;
+  }
+
+  .btns {
+    margin-top: 16px;
+  }
+  .btns button:first-child {
+    margin-bottom: 8px;
+  }
+}
+
+/*# sourceMappingURL=calendar.css.map */

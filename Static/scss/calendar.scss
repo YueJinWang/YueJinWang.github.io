@@ -1,0 +1,375 @@
+@import 'mixin';
+
+.wrap {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.title {
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid $color-primary;
+
+    h1 {
+        text-align: center;
+    }
+}
+
+
+.cal_title {
+    height: auto;
+    background: transparent !important;
+
+    button {
+        height: auto !important;
+        @include flex_center;
+
+        img {
+            height: 19px;
+            width: 18px;
+        }
+
+        .btn__next {
+            transform: rotate(180deg);
+        }
+
+    }
+
+    .cal_date {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 32px;
+        color: $color-primary;
+    }
+}
+
+
+.calendar {
+    .v-sheet {
+        margin-bottom: 36px;
+
+        * {
+            border-color: $color-c4 !important;
+        }
+    }
+
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+// border and background
+.v-calendar-weekly__head {
+    height: 31px;
+    border-bottom: 1px solid;
+}
+
+.theme--light.v-calendar-weekly .v-calendar-weekly__head-weekday.v-outside {
+    background: #fff;
+}
+
+.theme--light.v-calendar-weekly .v-calendar-weekly__day.v-outside {
+    background: $color-ec;
+}
+
+.v-calendar.v-calendar-events .v-calendar-weekly__head-weekday,
+.v-calendar.v-calendar-events .v-calendar-weekly__day {
+    margin-right: 0;
+}
+
+
+// day
+.v-calendar-weekly__head {
+    height: 34px;
+}
+
+.v-calendar-weekly__head-weekday {
+    @include font_regular;
+    line-height: 31px;
+}
+
+.v-calendar-weekly__day {
+    display: flex;
+    flex-direction: column;
+
+    .v-btn__content {
+        @include font_medium;
+    }
+
+    .v-event {
+        border-radius: 0;
+        height: 26px !important;
+        width: calc(100% - 16px) !important;
+        align-items: flex-start !important;
+
+        >div {
+            padding: 0 !important;
+        }
+
+        flex-wrap: wrap;
+        align-content: space-between;
+    }
+
+    .v-event:nth-child(2) {
+        border-bottom: 1px solid $color-e5;
+        margin-top: auto;
+
+        &::before {
+            content: '配荷';
+            @include font_small;
+        }
+    }
+
+    .v-event:nth-child(3) {
+        margin-top: 0;
+
+        &::before {
+            content: '集荷';
+            @include font_small;
+        }
+    }
+}
+
+
+.theme--light.v-calendar-weekly .v-calendar-weekly__head-weekday.v-past {
+    color: #000;
+}
+
+.v-calendar-weekly__day-label {
+    text-align: left;
+    margin: 4px 0 0 4px;
+    cursor: default;
+
+    button {
+        @include font_medium;
+        height: 25px !important;
+        min-width: 25px !important;
+        width: auto !important;
+        border-radius: 31px;
+        padding: 3px;
+        cursor: default !important;
+        color: transparent !important;
+    }
+
+    .v-btn__content {
+        color: #000;
+    }
+
+    .theme--light.v-btn:hover:before,
+    .theme--light.v-btn:focus:before {
+        opacity: 0;
+    }
+
+    .v-ripple_container {
+        display: none;
+    }
+}
+
+.v-calendar-weekly__week {
+    min-height: 124px !important;
+}
+
+.v-calendar {
+    .v-event {
+        margin: auto;
+
+        @include flex_center;
+        flex-direction: column;
+
+        >div {
+            font-size: 12px;
+            @include font_caption;
+        }
+
+        .v-ripple__container {
+            display: none;
+        }
+    }
+
+}
+
+.v-present {
+    .theme--light.v-btn.v-btn--has-bg {
+        background-color: $color-second;
+    }
+
+    .v-btn__content {
+        color: #fff !important;
+    }
+}
+
+
+
+
+@media screen and (max-width: 767px) {
+    .calendar {
+        .v-sheet {
+            margin-bottom: 16px;
+
+            * {
+                border-color: $color-c4 !important;
+            }
+        }
+
+    }
+
+    .cal_title {
+        button {
+            img {
+                height: 18px;
+                width: 19px;
+            }
+        }
+
+        .cal_date {
+            font-size: 16px;
+        }
+    }
+
+    .wrap__no_prods {
+        margin-top: 12px;
+    }
+
+    .v-calendar-weekly__head-weekday {
+        line-height: 34px;
+    }
+
+    .v-calendar-weekly__week {
+        min-height: 73px !important;
+    }
+
+    .v-calendar-weekly__day-label {
+        text-align: center;
+        margin: 5px auto 2px auto;
+    }
+
+    .v-calendar-weekly__day {
+        height: 73px !important;
+
+        .v-event {
+            flex-direction: row;
+            justify-content: space-between;
+            width: calc(100% - 8px) !important;
+
+            &:nth-child(2)::before {
+                content: "配";
+            }
+
+            &:nth-child(3)::before {
+                content: "集";
+            }
+        }
+    }
+
+
+
+    .theme--light.v-calendar-weekly .v-calendar-weekly__day.v-outside {
+        background: transparent;
+
+        .v-btn__content {
+            color: $color-c4;
+        }
+    }
+}
+
+
+
+// calendar_detail
+.font_date {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.wrap__header {
+    @include flex_between;
+    border-bottom: 1px solid #C4C4C4;
+    padding-bottom: 12px;
+
+    img {
+        width: 19px;
+        height: 18px;
+    }
+
+    .header__pref {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        .pref__text {
+            padding-left: 8px;
+        }
+    }
+
+    .header__next {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        .next__text {
+            padding-right: 8px;
+        }
+
+        img {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 767px) {
+    .font_date {
+        font-size: 16px;
+    }
+
+    .pref__text,
+    .next__text {
+        display: none;
+    }
+
+    .wrap__table {
+        &>p {
+            margin: 12px 0 4px 0 !important;
+        }
+
+        .prod_table {
+
+            .col_1 {
+                min-width: 88px;
+            }
+
+            .col_2 {
+                width: 100%;
+            }
+
+            .col_3 {
+                min-width: 88px;
+            }
+
+        }
+
+        .table_title {
+            div {
+                height: 56px;
+                padding: 0 12px;
+            }
+        }
+
+        .table_row {
+            div {
+                min-height: 88px;
+                padding: 0 12px;
+            }
+        }
+    }
+
+    .btns {
+        margin-top: 16px;
+
+        button:first-child {
+            margin-bottom: 8px;
+        }
+    }
+}

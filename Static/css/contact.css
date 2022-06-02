@@ -1,0 +1,129 @@
+.wrap {
+  width: 100%;
+  max-width: 1088px;
+  margin: auto;
+}
+
+.wrap__header {
+  text-align: center;
+  border-bottom: 1px solid #C4C4C4;
+  margin-bottom: 16px;
+}
+.wrap__header h3 {
+  margin: 8px auto 16px auto;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 36px auto auto auto;
+}
+
+.form__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+.form__item label {
+  width: 20%;
+  min-width: 220px;
+}
+.form__item .form__group {
+  width: 60%;
+}
+.form__item .form__group textarea {
+  height: 200px;
+}
+.form__item .star {
+  top: -15px;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 767px) {
+  .wrap__header {
+    margin-bottom: 20px;
+  }
+  .wrap__header h3 {
+    margin: 12px auto;
+  }
+
+  .wrap__body p.font_bold {
+    text-align: center;
+  }
+
+  .content {
+    margin: 29px auto auto auto;
+  }
+
+  .form__item {
+    flex-direction: column;
+    margin-bottom: 16px;
+  }
+  .form__item label {
+    width: 100%;
+  }
+  .form__item .form__group {
+    width: 100%;
+  }
+  .form__item .form__group textarea {
+    height: 200px;
+  }
+  .form__item .star {
+    top: -8px;
+    margin-left: 4px;
+  }
+}
+.confirm {
+  background: #fff;
+  padding: 48px;
+  margin: 36px auto;
+}
+
+.confitm__item {
+  display: flex;
+  justify-content: space-between;
+}
+.confitm__item:first-child {
+  border-bottom: 1px solid #C4C4C4;
+  padding-bottom: 10px;
+  margin-bottom: 17px;
+}
+.confitm__item label {
+  width: 20%;
+  min-width: 300px;
+}
+.confitm__item p {
+  width: 60%;
+  text-align: justify;
+  white-space: pre-line;
+}
+
+.btns .btn_white {
+  margin-top: 12px;
+}
+
+@media screen and (max-width: 767px) {
+  .confirm {
+    padding: 20px 12px;
+    margin: 24px auto 12px auto;
+  }
+
+  .confitm__item {
+    flex-direction: column;
+  }
+  .confitm__item:first-child {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+  }
+  .confitm__item label {
+    width: 100%;
+  }
+  .confitm__item p {
+    width: 100%;
+  }
+
+  .btns .btn_white {
+    margin-top: 8px;
+  }
+}
+
+/*# sourceMappingURL=contact.css.map */

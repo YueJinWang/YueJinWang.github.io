@@ -1,0 +1,251 @@
+$color-primary : #375946;
+$color-second : #89BA34;
+$color-c4 : #C4C4C4;
+$color-ec : #ECECEC;
+$color-e5 : #E5E5E5;
+$color-f5 : #F5F5F5;
+$color-fa : #FAFAFA;
+$color-pink : #EDCABF;
+$color-aqua : #BFE7ED;
+$color-red : #FF0000;
+
+
+
+// font
+@mixin font_title {
+    letter-spacing: 0;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+
+    @media screen and (max-width: 767px) {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+}
+
+@mixin font_subtitle {
+    letter-spacing: 0;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+
+    @media screen and (max-width: 767px) {
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+}
+
+@mixin font_subtitle_2 {
+    letter-spacing: 0;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+
+    @media screen and (max-width: 767px) {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+}
+
+@mixin font_heading {
+    letter-spacing: 0;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+
+    @media screen and (max-width: 767px) {
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+}
+
+
+@mixin font_heading_2 {
+    letter-spacing: 0;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+
+    @media screen and (max-width: 767px) {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 22px;
+
+    }
+
+}
+
+@mixin font_bold {
+    letter-spacing: 0;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+
+    @media screen and (max-width: 767px) {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+}
+
+@mixin font_regular {
+    letter-spacing: 0;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+
+    @media screen and (max-width: 767px) {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+}
+
+@mixin font_medium {
+    letter-spacing: 0;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+
+    @media screen and (max-width: 767px) {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+}
+
+@mixin font_caption {
+    letter-spacing: 0;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 18px;
+
+    @media screen and (max-width: 767px) {
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+}
+
+@mixin font_small {
+    letter-spacing: 0;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+
+    @media screen and (max-width: 767px) {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+}
+
+@mixin font_mini {
+    letter-spacing: 0;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    transform: scale(.835);
+}
+
+
+
+@mixin font_primary {
+    color: $color-primary !important;
+}
+
+@mixin font_second {
+    color: $color-second !important;
+}
+
+@mixin font_black {
+    color: #000000 !important;
+}
+
+@mixin font_white {
+    color: #FFFFFF !important;
+}
+
+@mixin font_red {
+    color: $color-red !important;
+}
+
+
+
+
+// flex
+
+
+@mixin flex_center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex_between() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex_start() {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+// button
+@mixin btn_primary {
+    background: $color-primary;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+@mixin btn_white {
+    border: 1px solid $color-primary;
+    color: $color-primary;
+    cursor: pointer;
+}
+
+@mixin btn_gray {
+    color: #FFFFFF;
+    background: $color-c4;
+    cursor: default;
+    pointer-events: none;
+}
+
+
+
+// break line
+@mixin text_overflow($line) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+}
+
+
+// mypage
+@mixin mypage_subpage {
+    @media screen and (max-width: 767px) {
+        .mypage__menu {
+            display: none !important;
+        }
+    }
+}

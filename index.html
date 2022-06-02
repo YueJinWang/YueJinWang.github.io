@@ -29,9 +29,10 @@
                 // .. use this to start scanning.
                 const html5QrCode = new Html5Qrcode( /* element id */ "reader");
 
-                if (isMobileDevice()) {
-                    html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
-                }
+                // if (isMobileDevice()) {
+                //     html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
+                // }
+                html5QrCode.start({ facingMode: { exact: "environment"} }, config, qrCodeSuccessCallback);
 
                 html5QrCode.start(
                     cameraId, {

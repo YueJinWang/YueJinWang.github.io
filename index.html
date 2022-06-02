@@ -28,9 +28,9 @@
     <title>やさいバス</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../static/css/base.css">
-    <link rel="stylesheet" href="../static/css/layout.css">
-    <link rel="stylesheet" href="../static/css/qrcode.css">
+    <link rel="stylesheet" href="static/css/base.css">
+    <link rel="stylesheet" href="static/css/layout.css">
+    <link rel="stylesheet" href="static/css/qrcode.css">
 
 
     <!-- {% block css %} -->
@@ -106,7 +106,7 @@
                                 <div class="order__bottom">
                                     <div class="order__bottom--left">
                                         <div class="order_box wrap__img">
-                                            <img src="../Static/icon/box.png">
+                                            <img src="Static/icon/box.png">
                                         </div>
                                         <span class="font_bold">${order_box}$件</span>
                                     </div>
@@ -136,7 +136,7 @@
                     </div>
                     <!-- gotop -->
                     <div class="btn__gotop hide">
-                        <img src="../static/icon/goTop.png" alt="goTop">
+                        <img src="static/icon/goTop.png" alt="goTop">
                     </div>
 
                 </v-container>
@@ -145,8 +145,8 @@
 
             <v-footer class="footer" padless>
                 <v-row class="text-center">
-                    <a href="https://www.m2-labo.jp/"><img src="../static/icon/m2labo.png" alt="m2labo"></a>
-                    <a href="https://www.facebook.com/M2labo"><img src="../static/icon/facebook.png" alt="facebook"></a>
+                    <a href="https://www.m2-labo.jp/"><img src="static/icon/m2labo.png" alt="m2labo"></a>
+                    <a href="https://www.facebook.com/M2labo"><img src="static/icon/facebook.png" alt="facebook"></a>
                 </v-row>
                 <v-row class="text-center">
                     <div v-for="(item, i) in footer">
@@ -165,8 +165,8 @@
 
     <!-- {% block javascript %} -->
     <!-- {% endblock %} -->
-    <script src="../static/js/layout.js"></script>
-    <script src="../static/js/qrcode.js"></script>
+    <script src="static/js/layout.js"></script>
+    <script src="static/js/qrcode.js"></script>
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
 
 
@@ -178,27 +178,27 @@
             data: () => ({
                 breakpoint: "",
                 homepage_url: "#homepage_url",
-                yasaibus_logo: '../static/img/yasaibus_logo.png',
-                menu_img: '../static/icon/menu.png',
+                yasaibus_logo: 'static/img/yasaibus_logo.png',
+                menu_img: 'static/icon/menu.png',
                 header: [
                     {
                         page: 'カレンダー',
-                        img: '../static/icon/calendar.png',
-                        hover_img: '../static/icon/calendar_second.png',
+                        img: 'static/icon/calendar.png',
+                        hover_img: 'static/icon/calendar_second.png',
                         hover: false,
                         href: '#calendar',
                     },
                     {
                         page: 'お問い合わせ',
-                        img: '../static/icon/contact.png',
-                        hover_img: '../static/icon/contact_second.png',
+                        img: 'static/icon/contact.png',
+                        hover_img: 'static/icon/contact_second.png',
                         hover: false,
                         href: '#contact',
                     },
                     {
                         page: 'ログアウト',
-                        img: '../static/icon/logout.png',
-                        hover_img: '../static/icon/logout_second.png',
+                        img: 'static/icon/logout.png',
+                        hover_img: 'static/icon/logout_second.png',
                         hover: false,
                         href: '#logout',
                     },

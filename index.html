@@ -13,46 +13,52 @@
 </body>
 <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
 <script>
-        alert("3");
-    
-        function isMobileDevice() {
-            const mobileDevice = ['Android', 'webOS', 'iPhone', 'iPad', 'iPod', 'BlackBerry', 'Windows Phone']
-            let isMobileDevice = mobileDevice.some(e => navigator.userAgent.match(e))
-            alert(isMobileDevice)
-            return isMobileDevice
+    let facingMode;
+
+    function isMobileDevice() {
+        const mobileDevice = ['Android', 'webOS', 'iPhone', 'iPad', 'iPod', 'BlackBerry', 'Windows Phone']
+        let isMobileDevice = mobileDevice.some(e => navigator.userAgent.match(e))
+        if (isMobileDevice == true) {
+            facingMode = "environment"
+        } else {
+            facingMode = "user"
         }
+    }
+    isMobileDevice();
 
-        // This method will trigger user permissions
-        Html5Qrcode.getCameras().then(devices => {
 
-            if (devices && devices.length) {
-                var cameraId = devices[0].id;
-                // .. use this to start scanning.
-                const html5QrCode = new Html5Qrcode( /* element id */ "reader");
+    // This method will trigger user permissions
+    Html5Qrcode.getCameras().then(devices => {
 
-                html5QrCode.start(
-                    cameraId, {
-                    fps: 25, // frame per seconds for qr code scanning
-                    qrbox: {
-                        width: 206,
-                        height: 206
-                    },
-                    facingMode: "environment",
+        if (devices && devices.length) {
+            var cameraId = devices[0].id;
+            // .. use this to start scanning.
+            const html5QrCode = new Html5Qrcode( /* element id */ "reader");
+            console.log(facingMode)
+            html5QrCode.start(
+
+                cameraId, {
+                fps: 25, // frame per seconds for qr code scanning
+                facingMode: facingMode,
+                qrbox: {
+                    width: 206,
+                    height: 206
                 },
-                    (decodedText, decodedResult) => {
+            },
+                (decodedText, decodedResult) => {
 
-                    },
-                    (errorMessage) => {
-                        // parse error, ignore it.
-                    })
-                    .catch((err) => {
-                        // Start failed, handle it.
-                    });
+                },
+                (errorMessage) => {
+                    // parse error, ignore it.
+                })
+                .catch((err) => {
+                    // Start failed, handle it.
+                });
 
-            }
-        }).catch(err => {
-            // handle err
-        });
+        }
+    }).catch(err => {
+        // handle err
+    });
 
 </script>
 
